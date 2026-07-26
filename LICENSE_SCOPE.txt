@@ -1,0 +1,31 @@
+LICENCE SCOPE
+=============
+
+This release contains materials with two separate licences.
+
+1. Source code
+
+All Python source files under code/ are licensed under the PolyForm
+Noncommercial License 1.0.0 in LICENSE.txt. The required copyright notice is
+"Copyright (c) 2026 Ziyue Chen et al.".
+
+This permits non-commercial research, teaching, and public-interest use,
+including use by educational institutions and public research organisations.
+Commercial use requires prior written permission from the rights holders.
+
+2. Derived result tables
+
+All CSV files under output/ are licensed under Creative Commons
+Attribution-NonCommercial 4.0 International (CC BY-NC 4.0), whose complete
+legal text is in DATA_LICENSE.txt. Reuse must give appropriate attribution,
+link to the licence, state whether changes were made, and must not be
+primarily intended for commercial advantage or monetary compensation.
+
+3. Exclusions
+
+No rights are granted for source datasets, data downloaded from external
+providers, Google Earth Engine services or datasets, third-party packages, or
+material available solely through the external links cited in README.txt.
+Those materials remain subject to their respective terms and licences.
+
+The rights holders may offer separate commercial licences on request.

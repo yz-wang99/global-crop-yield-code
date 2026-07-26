@@ -1,0 +1,19 @@
+GITHUB / ZENODO RELEASE CHECKLIST
+=================================
+
+[ ] Confirm that every code author and institution approves public release.
+[ ] Confirm that the full author list in CITATION.cff is appropriate for the
+    code release, not only for the manuscript.
+[ ] Replace historical absolute paths only in an execution copy; do not upload
+    raw data, private directories, credentials, or restricted third-party data.
+[x] Code is released under PolyForm Noncommercial License 1.0.0
+    (LICENSE.txt); output tables are released under CC BY-NC 4.0
+    (DATA_LICENSE.txt). Verify that all rights holders approve these terms.
+[ ] In a clean environment, install requirements.txt and run a documented
+    smoke test with authorized data available locally.
+[ ] Confirm that the 49 feature CSVs enumerate in the required legacy order.
+[ ] Record intentional execution-copy corrections, including the
+    feature_tag/feature keyword correction in Step 4.
+[ ] After GitHub publication, add the public repository URL and Zenodo DOI to
+    CITATION.cff.
+[ ] Tag the release in GitHub and archive the same version to Zenodo.

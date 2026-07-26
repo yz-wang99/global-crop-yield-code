@@ -1,0 +1,18 @@
+# Large source data and derived artefacts are distributed separately.
+data/
+outputs/
+models/
+*.pkl
+*.joblib
+
+# Generated figures
+Fig_*.pdf
+Fig_*.eps
+Fig_*.tiff
+Fig_*_preview.png
+
+# Python and operating-system files
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
