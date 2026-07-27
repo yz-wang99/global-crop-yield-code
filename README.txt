@@ -1,8 +1,8 @@
 PUBLIC CODE AND SELECTED OUTPUTS
 ================================
 
-Title: An integrative framework for early estimation of global crop yields
-under increasing global crises
+Title: An integrative framework for early estimation of global crop yields demonstrated
+under large-scale disruptions 
 
 This repository contains the archived implementation and selected prediction
 outputs supporting the manuscript named above. It estimates national yields of
