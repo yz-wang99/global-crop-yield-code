@@ -407,7 +407,7 @@ for crop_type in crop:
                 file_dates=file_date,
                 crop=crop_type,
                 clf='RF',
-                feature=f"0{feature_combination}",
+                feature=f"0{Mode}",
                 seed=seed,
                 model_save= False,
                 model_save_dir=None
