@@ -98,9 +98,8 @@ Required data structures
 
 Phenology input for Step 1
   One country per row. Column 1 is adm0_name. Columns 2 and 3 are the
-  planting and harvest phenology summaries used for clustering (the archived
-  names are MEAN and MEAN_12). The code selects these features by position, so
-  do not insert columns before them.
+  planting and harvest phenology summaries used for clustering. The code 
+  selects these features by position, so do not insert columns before them.
 
 Point-reference input for Step 2
   The first eleven columns must keep the legacy order:
@@ -154,27 +153,14 @@ layout, use the following Step-3 values:
 
   Target year   year   end   Training years
   2020          2020   22    2002--2019
-  2021          2021   23    2002--2020
-  2022          2022   24    2002--2021
+  2021          2021   23    2003--2020
+  2022          2022   24    2004--2021
 
 Also use a matching testYYYY feature directory in Steps 2--4 and ensure GEE
 exports extend through the target year. If the crop calendar, time-series
 origin, or 16-day interval changes, recalculate the cluster-specific season
 starts, intervals, and calendar-day prediction cut-offs.
 
-Legacy implementation notes
----------------------------
-
-* For wheat, rice, and soybean the downstream code expects classes 0--3; for
-  maize it expects classes 0--2. The retained Step-1 active statement uses
-  n_clusters=4, so change it to 3 when regenerating the maize cluster table.
-* Step 2 calculates its robust class-specific bounds using the selected full
-  21-year archive. Step 3 subsequently applies pre-test-year feature scaling
-  to create the modelling tables.
-* The preserved active call in Step 4 uses feature_tag, whereas the crossvalid
-  function declares feature. This causes a Python keyword-argument error if
-  run unchanged. To execute an analysis copy, replace feature_tag with feature
-  and record that correction; the archived implementation here is unaltered.
 
 Environment and citation
 ------------------------
