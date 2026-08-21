@@ -167,8 +167,7 @@ Environment and citation
 
 The reference conda environment is recorded in ENVIRONMENT.txt and the exact
 package requirements are in requirements.txt. Cite the associated manuscript
-and this software release. CITATION.cff is machine-readable release metadata;
-after public release, add the public repository URL and assigned Zenodo DOI.
+and this software release.
 
 Licence and reuse
 -----------------
