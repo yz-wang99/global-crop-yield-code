@@ -4,8 +4,7 @@ This script consumes the 49 country-feature CSVs exported by Step 2 and an
 annual FAOSTAT yield table. The yield input has one row per country, an
 ``adm0_name`` first column, and chronological annual yield columns (the
 archived layout is 2000--2022). The Step-1 cluster CSV provides ``adm0_name``
-and ``class``; its original ``MEAN`` phenology field is retained there because
-Step 4 uses it to exclude unrealistically early predictions.
+and ``class``.
 
 The feature directory must contain exactly these 49 files in the legacy order
 returned by ``os.listdir``: ET, EVI, LSTD, LSTN, NDVI, PRE, TEM; for each
@@ -22,12 +21,10 @@ the class-specific number of retained 16-day composites. The final appended
 year is the held-out test set and all preceding rows are training data. Scaled
 versions use extrema calculated from historical (pre-test-year) rows only.
 
-To prepare a new target year, set both ``year`` and ``end``. With the archived
-2000-first yield layout, use ``end = target_year - 1998`` (22 for 2020, 23 for
-2021, and 24 for 2022), retain ``start = 3`` (2002), and point the input/output
-paths to matching feature directories. The crop-specific offsets and intervals
-reproduce the paper's P25-planting to P75-harvest windows; do not reuse them
-after changing the calendar, time-series origin, or composite frequency.
+To prepare a new target year, set both ``year`` and ``end``. With the archived 
+yield layout, use end = target_year - 1998 (22 for 2020, 23 for 2021, and 24 for 2022), 
+and retain start = 3, which means the time series starts from 2002. Point the 
+input/output paths to the corresponding feature directories.
 """
 
 import pandas as pd
