@@ -2,15 +2,10 @@
 
 This script reproduces the clustering step described in the Methods. The
 input CSV must have one row per country, ``adm0_name`` in the first column, and
-the two phenology quantities used for clustering in columns 2 and 3. In the
-analysed files these are ``MEAN`` and ``MEAN_12`` (planting and harvest
+the two phenology quantities used for clustering in columns 2 and 3 (planting and harvest
 calendar positions). The code selects these fields by position, not name, so
 do not insert a column before them.
 
-All non-country columns are MinMax-scaled, but only those first two scaled
-phenology columns enter the Ward dendrogram and agglomerative partition. The
-output retains the input columns and adds/replaces ``class`` with an integer
-phenology label.
 """
 
 import pandas as pd
@@ -49,7 +44,7 @@ plt.show()
 
 # The cluster count must match the crop-specific downstream season windows.
 # clusters = AgglomerativeClustering(n_clusters=4, metric='euclidean', linkage='ward')
-max_d = 1.5  #Determine the threshold through a tree diagram
+max_d = 0.75  #Determine the threshold through a tree diagram
 clusters = fcluster(Z, max_d, criterion='distance')
 labels = clusters.fit_predict(df.iloc[:, 1:3])
 df['class'] = labels
