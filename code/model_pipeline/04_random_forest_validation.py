@@ -13,17 +13,15 @@ below are positional and are valid only for that exact arrangement.
 seven mean and seven standard-deviation blocks, and ``2`` selects all 49
 blocks (the active configuration). A 100-tree RandomForestRegressor is fitted
 for every shuffled 10-fold split. Test predictions from the ten fold models
-are averaged within each seed. The active seed list (30--300 in steps of 30)
-therefore fits 100 forests per crop/class/lead-time; the final summary tables
-average the per-seed metric values.
+are averaged within each seed. The active seed list therefore fits 100 forests 
+per crop/class/lead-time; the final summary tablesaverage the per-seed metric values.
 
-The cluster table is also read with ``MEAN``. The class-specific ``harvests``
-arrays are calendar-day prediction cut-offs; values larger than 365 represent
-seasons crossing a calendar year. A country is excluded when that cut-off is
-fewer than 30 days after its mean planting date (``MEAN``), preventing an
-unrealistically early prediction. If the crop calendar or lead-time spacing is
-changed, recalculate both ``intervals_*`` and ``harvest_*`` rather than editing
-only one list.
+The class-specific ``harvests`` arrays are calendar-day prediction cut-offs; 
+values larger than 365 represent seasons crossing a calendar year. 
+A country is excluded when that cut-off is fewer than 30 days after its mean 
+planting date, preventing an unrealistically early prediction. If the crop 
+calendar or lead-time spacing is changed, recalculate both ``intervals_*`` and
+``harvest_*`` rather than editing only one list.
 
 This file intentionally preserves the original executable statements. In its
 active call, however, ``crossvalid`` declares the argument ``feature`` whereas
@@ -367,6 +365,8 @@ Mode = 2  #0,1,2
 
 output_path = f'F:\\重要文档\\data\\test{test_year}\\'
 model_save_dir = fr'E:\D盘WYZ\Process_country(Non_scale)\test{test_year}\models'
+
+# seed_list = list(range(10, 101, 10))
 seed_list = list(range(30, 301, 30))
 
 
